@@ -1,0 +1,8 @@
+create table if not exists acounts(
+	id serial,
+	firstname VARCHAR(30) NOT NULL,
+	lastname VARCHAR(30) NOT NULL,
+	username VARCHAR(30) NOT NULL,
+	email VARCHAR(30) NOT NULL,
+	password VARCHAR(30) NOT NULL
+);
