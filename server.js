@@ -39,6 +39,40 @@ app.get('/', function(req, res) {
   });
 });
 
+app.post('/submit', function(req, res) {
+  var username = req.body.uname;
+  var password = req.body.psw;
+
+  var insert_statement = "select password from acounts WHERE username = '"+username + "';";
+
+  db.task('get-everything', task => {
+    return task.batch([
+      task.any(insert_statement),
+      ]);
+  })
+  .then(info => {
+    info = info.substring(0,length);
+    console.log(info)
+    if (info == password){
+      console.log('nice job');
+    }
+    else{
+      console.log('yousuck');
+    }
+    res.render('pages/login',{
+      my_title: "Log in",
+    })
+  })
+  .catch(error => {
+        // display error message in case an error
+        request.flash('error', err);
+        response.render('pages/register', {
+          title: 'Registration Failed',
+
+        })
+      }); 
+});
+
 
 // registration page 
 app.get('/register', function(req, res) {
@@ -77,5 +111,5 @@ app.post('/register/submit', function(req, res) {
       }); 
 });
 
-app.listen(3000);
+app.listen(3003);
 console.log('3000 is the magic port');
