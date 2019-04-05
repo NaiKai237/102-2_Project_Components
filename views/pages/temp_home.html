@@ -5,9 +5,8 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
 	<title>Temp Lochat homepage</title>
-</head>
-<body>
-<div class="container">
+
+
 <style>
 ul {
   list-style-type: none;
@@ -15,6 +14,9 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #383c4a;
+  position: fixed;
+  top: 0;
+  width: 100%
 }
 li {
   float: left;
@@ -34,6 +36,9 @@ body{
 }
 }
 </style>
+</head>
+<body>
+<div class="navcontainer">
 	<ul>
 		<li><a href="">Home</a></li>
 		<li><a href="">About</a></li>
@@ -44,6 +49,36 @@ body{
 		
 		
 	</ul>
+</div>
+<div class="formcontainer" style="padding-left: 42%; padding-top: 5%">
+	<form form action="/register/submit" method="post">
+        
+        <div class="card" style="width: 700px; height: 500px; background: rgba(255,255,255,.85);">
+            <h5 style="text-align: center">Create New Account</h5>
+
+            <label for="fname"><b>First Name</b></label>
+            <input type="text" name="fname" id="fname" placeholder="Enter First Name" required />
+            
+            <label for="lname"><b>Last Name</b></label>
+            <input type="text" name="lname" id="lname" placeholder="Enter Last Name" name="lname" required />
+
+            <label for="uname"><b>Username</b></label>
+            <input type="text" name="uname" id="uname" placeholder="Create Username" name="uname" required />
+            
+            <label for="email"><b>Email</b></label>
+            <input type="text" name="email" id="email" placeholder="Enter Email" name="email" required />
+            
+            <label for="psw"><b>Password</b></label>
+            <input type="password" name="psw" id="psw" placeholder="Enter password" name="psw" required />
+            
+            <label for="psw-repeat"><b>Confirm Password</b></label>
+            <input type="password" placeholder="Password" name="psw-repeat" required />
+            <br>
+            <input type="submit" value="Create Account" style="background-color: #5294e2;color: black; outline: none"/>
+
+        </div>
+
+        
 </div>
 </body>
 </html>
