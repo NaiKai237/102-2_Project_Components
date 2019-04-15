@@ -23,7 +23,6 @@ ul {
 li {
   float: left;
   padding: 8px 10px;
-
 }
 li a {
   color:  #7c818c;
@@ -31,6 +30,7 @@ li a {
     display: block;
 }
 input{
+  color:white;
   background-color: rgb(29,29,29);
   border: 2px solid #383c4a;
 }
@@ -85,7 +85,7 @@ body{
             <strong><font color="#4A89B1">Confirm Password</font></strong>
             <input type="password" placeholder="Password" name="psw-repeat" required />
             <br>
-            <button type="submit" value="Create Account" name="RegSub" style="background-color: rgb(74, 137, 177);color: black; outline: none">Create Account</button>
+            <button type="button" class="btn" value="Create Account" name="RegSub" onClick = "enableButton()"" style="background-color: rgb(74, 137, 177);color: black; outline: none">Create Account</button>
 
 
         </div>
