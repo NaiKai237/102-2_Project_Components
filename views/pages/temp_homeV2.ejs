@@ -1,32 +1,8 @@
-<!DOCTYPE html>
-<html>
-<body background="https://cdn.discordapp.com/attachments/405627908334419968/564909732889100318/lochat2.jpg">
-    <!-- This was just a temp source. I'll reuppload a better image later. Just testing formatting -->
-<head>
-    <!-- Bootstrap core CSS -->
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-  <title>Temp Lochat homepage</title>
-  <script type="text/javascript" src="./LoChat.js"></script>
-<link rel="stylesheet" type="text/css" href="style_sheet.css">
+<% include partials/header %>
+<title>Temp Lochat homepage</title>
 </head>
 <body>
-<div class="navcontainer">
-  <ul>
-    <li><a href="">INSERT LOGO IMAGE</a></li>
-    <li><a href="">Home</a></li>
-    <li><a href="">About</a></li>
-    <li><a href="">Settings</a></li>
-    <!--  <li style="float: right;"><input type="submit" value="Log In" style="background-color: #7c818c;color: black; outline: none">  -->
-    <li style="float: right;"><button type="button" class="btn btn-primary btn-sm" name="logout" hidden="true">Log Out</button></li>
-    <li style="float: right;"><button type="button" class="btn btn-primary btn-sm" name="login">Log In!</button></li>
-    <li style="float: right;"><input type="password" placeholder="Password" name="psw"></li>
-    <li style="float: right;"><input type="text" placeholder="Username" name="uname"></li>
-    
-    
-    
-  </ul>
-</div>
+<%include partials/navbar %>
 <div class="formcontainer" style="padding-left: 42%; padding-top: 5%">
   <form form action="/register/submit" method="post">
         

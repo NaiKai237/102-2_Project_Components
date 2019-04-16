@@ -1,0 +1,29 @@
+ul {
+  list-style-type: none;
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  background-color: #383c4a;
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+li {
+  float: left;
+  padding: 8px 10px;
+}
+li a {
+  color:  #7c818c;
+  display: block;
+    display: block;
+}
+input{
+  color:white;
+  background-color: rgb(29,29,29);
+  border: 2px solid #383c4a;
+}
+body{
+   background-repeat: no-repeat;
+   background-size: cover;
+  background-color: #383c4a;
+}
