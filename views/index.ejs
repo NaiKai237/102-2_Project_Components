@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Simple Group Chat on Node.js</title>
+    <link href="resources/style_sheet.css" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font: 13px Helvetica, Arial; }
@@ -16,6 +17,7 @@
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   </head>
   <body>
+    <%include pages/partials/navbar%>
     <ul id="messages"></ul>
     <form action="/" method="POST" id="chatForm">
       <input id="txt" autocomplete="off" autofocus="on" oninput="isTyping()" placeholder="type your message here..." /><button>Send</button>

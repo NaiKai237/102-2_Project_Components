@@ -35,8 +35,13 @@ app.use(express.static(__dirname + '/'));//This line is necessary for us to use 
 // registration page 
 app.get('/', function(req, res) {
   res.render('pages/home',{
-    my_title:"home"
+    my_title:"LoChat login"
   });
+});
+app.get('/about',function(req,res){
+  res.render('pages/about',{
+    my_title:"about LoChat"
+  })
 });
 
 app.post('/submit', function(req, res) {
@@ -74,13 +79,6 @@ app.post('/submit', function(req, res) {
 });
 
 
-// registration page 
-app.get('/register', function(req, res) {
-	res.render('pages/register',{
-		my_title:"Registration Page"
-	});
-});
-
 app.post('/register/submit', function(req, res) {
   var fname = req.body.fname;
   var lname = req.body.lname;
@@ -97,14 +95,14 @@ app.post('/register/submit', function(req, res) {
       ]);
   })
   .then(info => {
-    res.render('pages/login',{
+    res.render('/',{
       my_title: "Log in",
     })
   })
   .catch(error => {
         // display error message in case an error
         request.flash('error', err);
-        response.render('pages/register', {
+        response.render('/', {
           title: 'Registration Failed',
 
         })
