@@ -3,8 +3,12 @@ const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/'));//This line is necessary for us to use relative paths and access our resources directory
+
 app.get('/', function(req, res) {
-    res.render('index.ejs');
+    res.render('pages/index.ejs');
 });
 
 io.sockets.on('connection', function(socket) {
