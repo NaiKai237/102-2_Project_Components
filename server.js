@@ -34,8 +34,8 @@ app.use(express.static(__dirname + '/'));//This line is necessary for us to use 
 
 // registration page 
 app.get('/', function(req, res) {
-  res.render('pages/login',{
-    my_title:"Log in"
+  res.render('pages/home',{
+    my_title:"home"
   });
 });
 
