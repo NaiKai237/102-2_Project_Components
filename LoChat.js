@@ -1,87 +1,16 @@
-//registration page
-//doc.getelemets for all the userinput
-/*var firstName = document.getElementsByName("fname").value;
-var lastName = document.getElementsByName("lname").value;
-var userName = document.getElementsByName("uname").value;
-var email = document.getElementsByName("email").value;
-var password = document.getElementsByName('psw').value;
-var confirmPassword = document.getElementsByName("psw-repeat").value;
+var readyToLogIn = false;
 
-document.getElementsByName("RegSub").disabled =true;
-
-
-function password8char()
-{
-	
-	if (password.length >= 8)
-	{
-		return true;
-	}
-
-	else
-	{
-		return false;
-	}
-//make sure passwords is atleast 8 chars, return bool
-}
-
-function confirmPasswords()
-{
-	if (password == confirmPassword)
-	{
-		return true;
-	}
-
-	else
-	{
-		return false;
-	}
-}
-
-function namesExist()
-{
-	if (firstName.length > 0 && lastName.length > 0)
-	{
-		return true;
-	}
-
-	else
-	{
-		return false;
-	}
-}
-
-//function uniqueUser()
-//{
-////database check
-//}
-
-
-function enableButton()
-{
-	console.log(email);
-
-
-	if (password8char() == true && confirmPasswords() == true && namesExist() == true)
-	{
-		document.getElementsByName("RegSub").disabled =false;
-		console.log("Hello");
-	}
-
-}
-//if all of the above are true, enable the button
-*/
-
+//FOR REGISTRATION PAGE
 document.getElementsByName("RegSub").disabled =true;
 
 function enableButton(){
 	var firstName = document.forms["myForm"]["fname"].value;
-	console.log(firstName);
 	var lastName = document.forms["myForm"]["lname"].value;
 	var userName = document.forms["myForm"]["uname"].value;
 	var email = document.forms["myForm"]["email"].value;
 	var password = document.forms["myForm"]["psw"].value;
 	var confirmPassword = document.forms["myForm"]["psw-repeat"].value;
+
 	if (firstName == "") {
     	alert("First Name must be filled out");
     	return false;
@@ -98,6 +27,13 @@ function enableButton(){
     	alert("Email must be filled out");
     	return false;
     }
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (re.test(String(email).toLowerCase()) == false)
+    {
+    	alert("Invalid Email");
+    	return false;
+    }
+
     if (password == "") {
     	alert("Password must be filled out");
     	return false;
@@ -118,5 +54,32 @@ function enableButton(){
 	}
 
     document.getElementsByName("RegSub").disabled =false;
+    readyToLogIn = true; //will check when going to chat roon
 
 }
+
+
+//FOR LOGGING IN CHECK
+
+/*
+document.getElementsByName("login").disabled =true;
+
+function checkUserPass(){
+	var uName = document.getElementsByName("uName2").value;
+	var password = document.getElementsByName("psw2").value;
+
+	if (uName.length == 0){
+		alert("Username cannot be empty");
+		return false;
+	}
+
+	if (pWord.length == 0){
+		alert("Password cannot be empty");
+		return false;
+	}
+
+
+	document.getElementsByName("login").disabled =false;
+	readyToLogIn = true;
+}
+*/
