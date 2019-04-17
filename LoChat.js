@@ -61,19 +61,19 @@ function enableButton(){
 
 //FOR LOGGING IN CHECK
 
-/*
+
 document.getElementsByName("login").disabled =true;
 
 function checkUserPass(){
-	var uName = document.getElementsByName("uName2").value;
-	var password = document.getElementsByName("psw2").value;
+	var userName = document.forms["myForm2"]["uname2"].value;
+	var password = document.forms["myForm2"]["psw2"].value;
 
-	if (uName.length == 0){
+	if (userName.length == 0){
 		alert("Username cannot be empty");
 		return false;
 	}
 
-	if (pWord.length == 0){
+	if (password.length == 0){
 		alert("Password cannot be empty");
 		return false;
 	}
@@ -82,4 +82,3 @@ function checkUserPass(){
 	document.getElementsByName("login").disabled =false;
 	readyToLogIn = true;
 }
-*/
