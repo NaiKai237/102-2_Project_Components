@@ -12,17 +12,19 @@
 </head>
 <body>
 <div class="navcontainer">
-  <ul>
-    <li><a href="">INSERT LOGO IMAGE</a></li>
-    <li><a href="">Home</a></li>
-    <li><a href="">About</a></li>
-    <li><a href="">Settings</a></li>
-    <!--  <li style="float: right;"><input type="submit" value="Log In" style="background-color: #7c818c;color: black; outline: none">  -->
-    <li style="float: right;"><button type="button" class="btn btn-primary btn-sm" name="logout" hidden="true">Log Out</button></li>
-    <li style="float: right;"><button type="button" class="btn btn-primary btn-sm" name="login" onClick = "checkUserPass()" >Log In!</button></li>
-    <li style="float: right;"><input type="password" placeholder="Password" name="psw2"></li>
-    <li style="float: right;"><input type="text" placeholder="Username" name="uname2"></li>
-  </ul>
+  <form form action=/login/submit" method="" name="myForm2">
+    <ul>
+      <li><a href="">INSERT LOGO IMAGE</a></li>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="" hidden="true">Settings</a></li>
+      <!--  <li style="float: right;"><input type="submit" value="Log In" style="background-color: #7c818c;color: black; outline: none">  -->
+      <li style="float: right;"><button type="button" class="btn btn-primary btn-sm" name="logout" hidden="true">Log Out</button></li>
+      <li style="float: right;"><button type="button" class="btn btn-primary btn-sm" name="login" onClick = "checkUserPass()" >Log In!</button></li>
+      <li style="float: right;"><input type="password" placeholder="Password" name="psw2"></li>
+      <li style="float: right;"><input type="text" placeholder="Username" name="uname2"></li>
+    </ul>
+  </form>
 </div>
 <div class="formcontainer" style="padding-left: 42%; padding-top: 5%">
   <form form action="/register/submit" method="post" name="myForm">
