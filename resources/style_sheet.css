@@ -1,4 +1,4 @@
-ul {
+#nav_ul{
   list-style-type: none;
   margin: auto;
   padding: 0;
@@ -8,7 +8,7 @@ ul {
   top: 0;
   width: 100%
 }
-li {
+#nav_li{
   float: left;
   padding: 8px 10px;
 }
