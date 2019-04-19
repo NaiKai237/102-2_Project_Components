@@ -61,7 +61,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/'));//This line is necessary for us to use relative paths and access our resources directory
 
 // registration page 
-app.get('/', function(req, res) {
+app.get('/home', function(req, res) {
   res.render('pages/home',{
     my_title:"LoChat login"
   });
@@ -99,7 +99,7 @@ app.post('/submit2', function(req, res) {
   .catch(error => {
         // display error message in case an error
         request.flash('error', err);
-        response.render('pages/register', {
+        response.render('pages/home', {
           title: 'Registration Failed',
 
         })
