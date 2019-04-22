@@ -13,12 +13,13 @@
     .message_container{
         font: 13px Helvetica, Arial; 
     }
-        form { background: #fff; padding: 3px; position: fixed; bottom: 0; width: 100%; border-color: #000; border-top-style: solid; border-top-width: 1px;}
-        form input { border-style: solid; border-width: 1px; padding: 10px; width: 85%; margin-right: .5%; }
-        form button { width: 9%; background: #7c818c; border: none; padding: 10px; margin-left: 2%; }
+        form { background: #383c4a; padding: 3px; position: fixed; bottom: 0; width: 100%; border-color: #000; border-top-style: solid; border-top-width: 1px;}
+        form input { border-style: solid; border-width: 1px; padding: 10px; width: 85%; margin-right: .5%; border-color: rgb(74, 137, 177);}
+        form button { width: 9%; background: #7c818c; border: none; padding: 10px; margin-left: 2%;}
         #messages { list-style-type: none; margin-top: 4%; padding: 0;}
         #messages li { padding: 5px 10px; }
-        #messages li:nth-child(odd) { background: #eee; }
+        #messages li:nth-child(even){color: #7c818c;}
+        #messages li:nth-child(odd) { background: #7c818c; }
     </style>
   </head>
   <body>
@@ -26,7 +27,7 @@
     <div class="message_container">
         <ul id="messages" ></ul>
         <form action="/" method="POST" id="chatForm">
-          <input id="txt" autocomplete="off" autofocus="on" oninput="isTyping()" placeholder="type your message here..." /><button class="btn btn-primary btn-sm">Send</button>
+          <input id="txt" autocomplete="off" autofocus="on" oninput="isTyping()" placeholder="type your message here..." /><button class="btn btn-sm" style="background-color: rgb(74, 137, 177); color:black;">Send</button>
         </form>
         <script>
                 var socket = io.connect('http://localhost:8080');

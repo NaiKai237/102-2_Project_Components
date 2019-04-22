@@ -7,6 +7,14 @@ const io = require('socket.io')(http);
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/'));//This line is necessary for us to use relative paths and access our resources directory
 
+  const dbConfig = {
+   host: 'localhost',
+   port: 5432,
+   database: 'project',
+   user: 'postgres',
+   password: 'user'
+ };
+
 app.get('/', function(req, res) {
     res.render('pages/index.ejs');
 });
@@ -89,14 +97,14 @@ app.post('/submit', function(req, res) {
       ]);
   })
   .then(info => {
-    res.render('pages/index',{
-      my_title: "title",
+    res.render('/home',{
+      my_title: "home",
     })
   })
   .catch(error => {
         // display error message in case an error
         request.flash('error', err);
-        response.render('/', {
+        response.render('/home', {
           title: 'Error Message',
 
         })
