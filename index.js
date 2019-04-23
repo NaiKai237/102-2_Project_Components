@@ -59,6 +59,7 @@ app.get('/home', function(req, res) {
     my_title:"LoChat login"
   });
 });
+
 app.get('/about',function(req,res){
   res.render('pages/about',{
     my_title:"about LoChat"
@@ -70,6 +71,7 @@ app.post('/login', function(req, res) {
   var password = req.body.loginpsw;
 
   var insert_statement = "select password from acounts WHERE username = '"+username + "';";
+  console.log(insert_statement);
 
   db.task('get-everything', task => {
     return task.batch([
@@ -77,7 +79,8 @@ app.post('/login', function(req, res) {
       ]);
   })
   .then(info => {
-    info = info.substring(0,length);
+    console.log(info[0].split)
+    //var info2 = info.substring(0,length);
     console.log(info)
     if (info == password){
       console.log('nice job');
