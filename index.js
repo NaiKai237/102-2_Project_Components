@@ -85,7 +85,7 @@ app.post('/login', function(req, res) {
     if (info == password){
       console.log('nice job');
       res.render('/home',{
-        my_title: "home",
+        user: username,
       })
     }
     else{
@@ -123,7 +123,7 @@ app.post('/submit', function(req, res) {
   })
   .then(info => {
     res.render('pages/index',{
-      my_title: "home",
+      user: username,
     })
   })
   .catch(error => {
