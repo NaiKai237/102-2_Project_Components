@@ -72,9 +72,9 @@ app.get('/about',function(req,res){
   })
 });
 
-app.post('/submit2', function(req, res) {
-  var username = req.body.uname;
-  var password = req.body.psw;
+app.post('/login', function(req, res) {
+  var username = req.body.loginuname;
+  var password = req.body.loginpsw;
 
   var insert_statement = "select password from acounts WHERE username = '"+username + "';";
 

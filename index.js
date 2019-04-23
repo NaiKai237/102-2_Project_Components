@@ -16,7 +16,9 @@ app.use(express.static(__dirname + '/'));//This line is necessary for us to use 
  };
 
 app.get('/', function(req, res) {
-    res.render('pages/index.ejs');
+  res.render('pages/home',{
+    my_title: "home",
+  })
 });
 
 io.sockets.on('connection', function(socket) {
@@ -46,9 +48,9 @@ app.get('/about',function(req,res){
   })
 });
 
-app.post('/submit2', function(req, res) {
-  var username = req.body.uname;
-  var password = req.body.psw;
+app.post('/login', function(req, res) {
+  var username = req.body.loginuname;
+  var password = req.body.loginpsw;
 
   var insert_statement = "select password from acounts WHERE username = '"+username + "';";
 
@@ -62,20 +64,22 @@ app.post('/submit2', function(req, res) {
     console.log(info)
     if (info == password){
       console.log('nice job');
+      res.render('/home',{
+        my_title: "home",
+      })
     }
     else{
       console.log('yousuck');
+      res.render('pages/login',{
+        my_title: "Login",
+      })
     }
-    res.render('pages/login',{
-      my_title: "Log in",
-    })
   })
   .catch(error => {
         // display error message in case an error
         request.flash('error', err);
-        response.render('pages/home', {
-          title: 'Registration Failed',
-
+        response.render('pages/login', {
+          title: 'Login Failed',
         })
       }); 
 });
@@ -112,6 +116,6 @@ app.post('/submit', function(req, res) {
 });
 
 
-const server = http.listen(8080, function() {
-    console.log('magic port is 8080');
+const server = http.listen(3003, function() {
+    console.log('magic port is 3003');
 })
