@@ -2,7 +2,7 @@
 <body>
 <%include partials/navbar %>
 <div class="formcontainer" style="padding-left: 42%; padding-top: 5%">
-  <form form action="/submit" method="post" name="myForm">
+  <form action="/submit" method="post" name="myForm">
         
         <div class="card" style="width: 700px; height: 500px; background: rgba(12,12,12,.85);">
             <center><strong><font color="#4A89B1"; size = "6">Create New Account</font></strong></center>
@@ -24,9 +24,10 @@
             <strong><font color="#4A89B1">Confirm Password</font></strong>
             <input type="password" placeholder="Password" name="psw-repeat" required />
             <br>
-            <button type="submit" value="submit" class="btn" value="Create Account" name="RegSub" onClick = "enableButton()"" style="background-color: rgb(74, 137, 177);color: black; outline: none">Create Account</button>
+            <button type="submit" value="submit" class="btn" value="Create Account" name="RegSub" style="background-color: rgb(74, 137, 177);color: black; outline: none">Create Account</button>
         </div>
-        
+
+  </form>
         
 </div>
 </body>
