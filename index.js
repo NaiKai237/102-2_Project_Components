@@ -79,12 +79,9 @@ app.post('/login', function(req, res) {
       ]);
   })
   .then(info => {
-    console.log(info[0].split)
-    //var info2 = info.substring(0,length);
-    console.log(info)
-    if (info == password){
+    if (info[0][0].password == password){
       console.log('nice job');
-      res.render('/home',{
+      res.render('pages/index',{
         user: username,
       })
     }
