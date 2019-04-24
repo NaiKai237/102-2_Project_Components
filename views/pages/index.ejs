@@ -22,7 +22,15 @@
     </style>
   </head>
   <body>
-<%include partials/navbar %>
+<div class="navcontainer">
+  <ul id="nav_ul">
+    
+    <li id="nav_li"><a href="/"><img src="/views/pages/partials/lochatLogo.png" height="40" width="50"></a></li>
+    <li id="nav_li"><a href="home">Home</a></li>
+    <li id="nav_li"><a href="about">About</a></li>
+    <li id="nav_li"><a href="" hidden="true">Settings</a></li>
+  </ul>
+</div>
     <div class="message_container">
         <ul id="messages" ></ul>
         <form action="/" method="POST" id="chatForm">
