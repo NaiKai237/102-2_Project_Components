@@ -38,6 +38,9 @@
         </form>
         <script>
                 var socket = io();
+                if (msg == "fuck" || msg == "dick" || msg == "stuff"){
+                    msg = "I said a bad word";
+                }
 
                 // submit text message without reload/refresh the page
                 $('form').submit(function(e){
