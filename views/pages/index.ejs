@@ -29,7 +29,7 @@
           <input id="txt" autocomplete="off" autofocus="on" oninput="isTyping()" placeholder="type your message here..." /><button class="btn btn-sm" style="background-color: rgb(74, 137, 177); color:black;">Send</button>
         </form>
         <script>
-                var socket = io.connect('http://localhost:3003');
+                var socket = io();
 
                 // submit text message without reload/refresh the page
                 $('form').submit(function(e){
