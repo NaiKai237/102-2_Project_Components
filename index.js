@@ -70,8 +70,14 @@ app.post('/login', function(req, res) {
   var username = req.body.loginuname;
   var password = req.body.loginpsw;
 
+// ADDED CRYPTO SECTION
+  const crypto = require('crypto');
+  const hash = crypto.createHmac('sha256', password)
+                     .update('I love cupcakes')
+                     .digest('hex');
+// END CRYPTO SECTION
+
   var insert_statement = "select password from acounts WHERE username = '"+username + "';";
-  console.log(insert_statement);
 
   db.task('get-everything', task => {
     return task.batch([
@@ -79,23 +85,23 @@ app.post('/login', function(req, res) {
       ]);
   })
   .then(info => {
-    if (info[0][0].password == password){
-      console.log('nice job');
+    if (info[0][0] && info[0][0].password == hash){ // CHANGED LINE
+      console.log('Successful Login'); // CHANGED LINE
       res.render('pages/index',{
         user: username,
       })
     }
     else{
-      console.log('yousuck');
-      res.render('pages/login',{
-        my_title: "Login",
+      console.log('Failed Login'); //CHANGED LINE
+      res.render('pages/home',{ // CHANGED LINE
+        my_title: "Login Failed", // CHANGED LINE
       })
     }
   })
   .catch(error => {
         // display error message in case an error
         request.flash('error', err);
-        response.render('pages/login', {
+        response.render('pages/home', { // CHANGED LINE
           title: 'Login Failed',
         })
       }); 
@@ -103,15 +109,21 @@ app.post('/login', function(req, res) {
 
 
 app.post('/submit', function(req, res) {
-  console.log(req.body.fname);
   var fname = req.body.fname;
   var lname = req.body.lname;
   var username = req.body.uname;
   var email = req.body.email;
   var password = req.body.psw;
 
+// ADDED CRYPTO SECTION
+  const crypto = require('crypto');
+  const hash = crypto.createHmac('sha256', password)
+                     .update('I love cupcakes')
+                     .digest('hex');
+// END CRYPTO SECTION
+
   var insert_statement = "INSERT INTO acounts(firstname, lastname, username, email, password) VALUES('" + fname + "','" + 
-  lname + "','" + username + "','" + email + "','" + password +"') ON CONFLICT DO NOTHING;";
+  lname + "','" + username + "','" + email + "','" + hash +"') ON CONFLICT DO NOTHING;"; //changed password to hash
 
   db.task('get-everything', task => {
     return task.batch([
@@ -126,7 +138,7 @@ app.post('/submit', function(req, res) {
   .catch(error => {
         // display error message in case an error
         request.flash('error', err);
-        response.render('/', {
+        response.render('pages/home', { // CHANGED LINE
           title: 'Error Message',
         })
       }); 
