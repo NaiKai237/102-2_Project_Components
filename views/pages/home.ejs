@@ -1,47 +1,48 @@
 <%include partials/header%>
 <body>
-<%include partials/navbar %>
+  <%include partials/navbar %>
 
 
-<div class="formcontainer" style="padding-left: 42%; padding-top: 5%">
-  <form action="/submit" method="post" name="myForm">
+  <div class="formcontainer" style="padding-left: 42%; padding-top: 5%">
+    <form action="/submit" method="post" name="myForm">
+      
+      <div class="card" style="width: 700px; height: 500px; background: rgba(12,12,12,.85);">
+        <center><strong><font color="#4A89B1"; size = "6">Create New Account</font></strong></center>
         
-        <div class="card" style="width: 700px; height: 500px; background: rgba(12,12,12,.85);">
-            <center><strong><font color="#4A89B1"; size = "6">Create New Account</font></strong></center>
-            
-            <strong><font color="#4A89B1">First Name</font></strong>
-            <input type="text" name="fname" id="fname" placeholder="Enter First Name" required />
-            
-             <strong><font color="#4A89B1">Last Name</font></strong>
-            <input type="text" name="lname" id="lname" placeholder="Enter Last Name" required />
-             <strong><font color="#4A89B1">Username</font></strong>
-            <input type="text" name="uname" id="uname" placeholder="Create Username" required />
-            
-             <strong><font color="#4A89B1">Email</font></strong>
-            <input type="email" name="email" id="email" placeholder="Enter Email" required />
-            
-             <strong><font color="#4A89B1">Password</font></strong>
-            <input type="password" name="psw" id="psw" placeholder="Enter password" required />
-            
-            <strong><font color="#4A89B1">Confirm Password</font></strong>
-            <input type="password" name="psw-repeat" id="psw-repeat" placeholder="Password" oninput="validate(this)" required />
-            
-            <script type="text/javascript">
-              function validate(data) {
-                if(data.value != document.getElementById('psw').value) {
-                  data.setCustomValidity('Passwords do no match!');
-                } else {
-                  data.setCustomValidity('');
-                }
-              }
-            </script>
-
-            <br>
-            <button type="submit" value="submit" class="btn" value="Create Account" name="RegSub" style="background-color: rgb(74, 137, 177);color: black; outline: none">Create Account</button>
-        </div>
-
-  </form>
+        <strong><font color="#4A89B1">First Name</font></strong>
+        <input type="text" name="fname" id="fname" placeholder="Enter First Name" required />
         
-</div>
+        <strong><font color="#4A89B1">Last Name</font></strong>
+        <input type="text" name="lname" id="lname" placeholder="Enter Last Name" required />
+        <strong><font color="#4A89B1">Username</font></strong>
+        <input type="text" name="uname" id="uname" placeholder="Create Username" required />
+        
+        <strong><font color="#4A89B1">Email</font></strong>
+        <input type="email" name="email" id="email" placeholder="Enter Email" required />
+        
+        <strong><font color="#4A89B1">Password</font></strong>
+        <input type="password" name="psw" id="psw" placeholder="Enter password" required />
+        
+        <strong><font color="#4A89B1">Confirm Password</font></strong>
+        <input type="password" name="psw-repeat" id="psw-repeat" placeholder="Password" oninput="validate(this)" required />
+        
+        <script type="text/javascript">
+          function validate(data) {
+            if(data.value != document.getElementById('psw').value) {
+              data.setCustomValidity('Passwords do no match!');
+            } else {
+              data.setCustomValidity('');
+            }
+            
+          }
+        </script>
+
+        <br>
+        <button type="submit" value="submit" class="btn" value="Create Account" name="RegSub" style="background-color: rgb(74, 137, 177);color: black; outline: none">Create Account</button>
+      </div>
+
+    </form>
+    
+  </div>
 </body>
 </html>
